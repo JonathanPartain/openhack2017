@@ -18,7 +18,12 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
     width: 310px;
     padding-left: 8px;
     padding-right: 8px;
-    text-align: left; }
-#message form button {
-    width: 310px;
-    margin-top: 16px; }
+    text-align: left;
+}
+#message form input#password {
+    margin-top: 8px;
+}
+#message form input#submit {
+    margin-top: 16px;
+    text-align: center;
+}

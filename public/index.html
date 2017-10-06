@@ -23,7 +23,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
       <!-- Custom (probably temporary) CSS definition -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylesheets/temporary.css">
+
+      <!-- more Javascript! -->
+      <script src="javascripts/authentication.js"></script>
 
   </head>
   <body>
@@ -31,10 +34,11 @@
       <h2>Welcome</h2>
       <h1>First thing to do: Sign up!</h1>
       <p>Not really sure how (and if) this is going to work yet, but we'll probably find out together!</p>
-      <form>
-          <input id="email" type="email" placeholder="E-Mail">
-          <input id="password" type="password" placeholder="Password"><br>
-          <button formaction="send()">Let's go!</button>
+      <form type="signup" action="javascript:signUp(this.account.value, this.password.value, this.passwordrepeat.value)">
+          <input id="account" type="email" placeholder="E-Mail">
+          <input id="password" type="password" placeholder="Password">
+          <input id="passwordrepeat" type="password" placeholder="Password">
+          <input id="submit" type="submit" value="Let's go!">
       </form>
     </div>
     <p id="load">Firebase SDK Loading&hellip;</p>
