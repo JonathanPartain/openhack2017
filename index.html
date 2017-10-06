@@ -10,46 +10,66 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
 </head>
-<body>
+<body data-spy="scroll" data-target="#navbar">
 
-    <div class="container">
-        <div class="row center">
-            <div class="col-md-12">
-                <h1>JobSwipe</h1>
-            </div>
-        </div>
-
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-2">
 
-            </div>
-            <div class="col-md-8">
 
-                <ul class="nav nav-tabs">
+            <div class="fixed-top bgcolor" id="navbar">
+                <div class="center">
+                    <h1>JobSwipe</h1>
+                </div>
+
+                <ul class="nav nav-tabs nav-fill">
                     <li class="nav-item">
-                    <a class="nav-link active" href="#">Environment</a>
+                    <a class="nav-link" href="#env">Environment</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Soft skills</a>
+                    <a class="nav-link" href="#softskills">Soft skills</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#">Hard skills</a>
+                    <a class="nav-link" href="#hardskills">Hard skills</a>
                     </li>
 
                 </ul>
+            </div>
 
-                <div id="paragraph">
+        </div>
+    </div>
+    <div class="container-fluid">
+
+
+        <div class="row">
+            <div class="col-2 thirdbgcolor">
+
+            </div>
+            <div class="col-8 secondbgcolor">
+                <div class="row center extraHeight" id="env">
+                    <p>
+                        environment
+                    </p>
 
                 </div>
 
+                <div class="row center extraHeight" id="softskills">
+                    <p>
+                        softskills
+                    </p>
 
+                </div>
 
+                <div class="row center extraHeight" id="hardskills">
+                    <p>
+                        hardskills
+                    </p>
+                </div>
 
             </div>
 
-            <div class="col-md-2">
+            <div class="col-2 thirdbgcolor">
 
             </div>
 
@@ -57,6 +77,7 @@
 
 
     </div>
+
 
 
 
@@ -73,6 +94,8 @@
     <script>
         getRequest('http://httpbin.org/get');
     </script>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
