@@ -26,17 +26,11 @@
     width: 100%;
 }
 
-.navbar {
-    background-color: #FFF;
-}
-
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
 }
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
-    background-color: #fff !important;
+.nav-item .nav-link.active {
+    background-color: #00ff00 !important;
 }
 
 .nav-link{
@@ -49,11 +43,15 @@
 
 
 }
-
-.nav-link li.active {
-	background-color: #FFF6EB;
-
+.nav-item {
+    padding-left: 0px;
 }
+
+.nav-tabs .active {
+    color: #00FF00;
+    background-color: #00FF00;
+}
+
 
 h1 {
     font-size: 36px;
