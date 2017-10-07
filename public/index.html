@@ -97,7 +97,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="fixed-top bgcolor">
-                <div class="center">
+                <div class="center headingFont">
                     <h1>JobSwipe</h1>
 
                 </div>
@@ -144,10 +144,12 @@
 
                         <div class="row">
                             <div class="col-sm-6">
-
+                                <p>What do you prioritise in at the work place? </p>
+                                <div class="paddingCanvas">
 
                                     <canvas id="myChart" width="100" height="100" style="{background-color: blue;}"></canvas>
 
+                                </div>
 
                             </div>
                             <div class="col-sm-6 padded-column">
@@ -156,9 +158,7 @@
 
                                 <div class="row">
                                     <h2 class="center">
-
-                                        <div id="points">30</div>
-                                        <p> points remaining</p>
+                                        <p> Points remaining:<div id="points">30</div></p>
                                     </h2>
                                 </div>
 
@@ -170,11 +170,13 @@
                                         <div class="container">
                                             <ul id="envRow0" class="rating">
                                                 <li class="point zero enabled" id="0">0</li>
+
                                                 <li class="point zero" id="1">1</li>
                                                 <li class="point zero" id="2">2</li>
                                                 <li class="point zero" id="3">3</li>
                                                 <li class="point zero" id="4">4</li>
                                                 <li class="point zero" id="5">5</li>
+
                                             </ul>
                                         </div>
                                     </div>
@@ -188,6 +190,7 @@
                                         <div class="container">
                                             <ul id="envRow1" class="rating">
                                                 <li class="point one enabled" id="10">0</li>
+
                                                 <li class="point one" id="11">1</li>
                                                 <li class="point one" id="12">2</li>
                                                 <li class="point one" id="13">3</li>
@@ -349,13 +352,13 @@
 
                 <div class="extraHeight" id="softskills">
                     <p>
-                        softskills
+                        Soft Skills
                     </p>
                     <div class="row">
                         <div class="col-4">
 
                         </div>
-                        <div class="col-4" id="softskillsanswers">
+                        <div class="col-4 right" id="softskillsanswers">
 
                             <p id="ans0">
 
@@ -397,12 +400,12 @@
                             <p id="ans9">
 
                             </p>
-                            <div>
+                            <div class="">
                                 <button type="button" onclick="getPoints()">get points</button>
                             </div>
                         </div>
 
-                        <div clas ="col-4" id="softskillsform">
+                        <div class ="col-4 " id="softskillsform">
                             <script>listQuestions();</script>
 
                         </div>
@@ -410,10 +413,14 @@
 
                 </div>
 
-                <div class="row extraHeigh centert" id="hardskills">
+
+                <div class="extraHeight" id="hardskills">
+
                     <p>
-                        hardskills
+                        Hard Skills
                     </p>
+
+
                 </div>
 
             </div>
