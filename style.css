@@ -1,0 +1,47 @@
+.center {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.extraHeight {
+    margin-top: 500px;
+    margin-bottom: 500px;
+}
+.bgcolor {
+    background-color: #FFCFC1;
+}
+.secondbgcolor {
+    background-color: #03BD94;
+}
+.thirdbgcolor {
+    background-color: #F95C4B;
+}
+.container {
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+
+.navbar {
+    background-color: : "#FFF";
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #000 !important;
+}
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
+}
+
+
+
+h1 {
+    font-size: 36px;
+}
+
+p {
+    text-align: center;
+}
