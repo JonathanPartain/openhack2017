@@ -95,7 +95,8 @@ $(document).ready(function(){
 
     var func = function($number) {
         $('li.point.'+$number).click(function() {
-            console.log("animation: "+lastClicked);
+            //console.log("animation: "+lastClicked);
+            
             if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-window.lastClicked[parseInt(parseInt(this.id)/10)]) {
                 document.getElementById('alert-row').innerHTML="";
 
