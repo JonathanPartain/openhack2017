@@ -47,6 +47,7 @@
         }
 
         function initEnv() {
+
             // Environment row initialisation:
             var db = firebase.database().ref(userEnvironmentPath);
             for (var i = 0; i < 10; i++) {
@@ -188,7 +189,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow1" class="rating">
                                                 <li class="point one enabled" id="10">0</li>
 
                                                 <li class="point one" id="11">1</li>
@@ -400,13 +401,10 @@
                             <p id="ans9">
 
                             </p>
-                            <div class="bottom-right">
-                                <button type="button" onclick="getPoints()">Save</button>
-                            </div>
                         </div>
 
                         <div class ="col-4 " id="softskillsform">
-                            <script>listQuestions();</script>
+                            <script>listQuestions('soft');</script>
 
                         </div>
                     </div>
@@ -415,12 +413,61 @@
 
 
                 <div class="extraHeight" id="hardskills">
+                    <p>How would you rate your knowledge in:</p>
 
-                    <p>
+                    <div class="row">
+                        <div class="col-4">
 
-                        How would you rate your knowledge in:
-                    </p>
+                        </div>
+                        <div class="col-4 right" id="hardskillsanswers">
 
+                            <p id="hans0">
+
+                            </p>
+                            <br />
+                            <p id="hans1">
+
+                            </p>
+
+                            <br  />
+                            <p id="hans2">
+
+                            </p>
+                            <br  />
+                            <p id="hans3">
+
+                            </p>
+                            <br  />
+                            <p id="hans4">
+
+                            </p>
+                            <br  />
+                            <p id="hans5">
+
+                            </p>
+                            <br  />
+                            <p id="hans6">
+
+                            </p>
+                            <br  />
+                            <p id="hans7">
+
+                            </p>
+                            <br  />
+                            <p id="hans8">
+
+                            </p>
+                            <br  />
+                            <p id="hans9">
+
+                            </p>
+                        </div>
+
+                        <div class ="col-4 " id="hardskillsform">
+                            <script>listQuestions('hard');</script>
+
+                        </div>
+                    </div>
 
                 </div>
 

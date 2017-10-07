@@ -1,4 +1,4 @@
-var list = [
+var slist = [
     'Communication',
     'Meeting New People',
     'Presenting',
@@ -11,15 +11,26 @@ var list = [
     'Decision Making',
 ];
 
-function listQuestions() {
+var hlist = [
+    'Coding',
+    'Architecture',
+    'Mathematics',
+    'Writing',
+    'Graphic Design',
+    'Databases',
+    'Web Design',
+    'Accounting',
+    'Hardware',
+    'Legal'
+];
 
+function listQuestions(type) {
+    let list = (type == 'soft' ? slist : hlist);
 
     let f = document.createElement("form");
     f.setAttribute("action", "someFunction()");
 
-
     let ul = document.createElement("list");
-
 
     for (let n = 0; n < list.length; n++) {
         // one answer for each question
@@ -42,27 +53,29 @@ function listQuestions() {
 
             li2.setAttribute("id", n+"-"+m);
             ans.appendChild(li2);
-
         }
 
-
-        document.getElementById('ans'+n).appendChild(ans);
-
+        document.getElementById((type == 'soft' ? 'ans' : 'hans')+n).appendChild(ans);
     }
 
     f.appendChild(ul);
-
-
-    document.getElementById('softskillsform').appendChild(f);
-
-
-
+    document.getElementById((type == 'soft' ? 'softskillsform' : 'hardskillsform')).appendChild(f);
 }
 
+var sanswers = {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
+}
 
-ids = [];
-
-var answers = {
+var hanswers = {
     "0": 0,
     "1": 0,
     "2": 0,
@@ -80,7 +93,8 @@ var answers = {
 $(document).ready(function(){
 
     var func = function($num) {
-        $('li.point'+$num).click(function(){
+
+        $('#softskillanswers li.point'+$num).click(function(){
     		$('li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
     		$(this).toggleClass('enabled'); //Class will be toggled
     		$('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
@@ -90,12 +104,20 @@ $(document).ready(function(){
             var db = firebase.database().ref(userSoftSkillPath);
             db.child(userSoftSkillKeys[$num]).set($(this).attr("id").slice(-1), function(){});
     	});
-    }
 
+        $('#hardskillanswers li.point'+$num).click(function(){
+            $('li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
+            $(this).toggleClass('enabled'); //Class will be toggled
+            $('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
+            answers[$num] = $(this).attr("id").slice(-1);
+
+            // Firebase related things/ updating the current users database:
+            var db = firebase.database().ref(userHardSkillPath);
+            db.child(userHardSkillKeys[$num]).set($(this).attr("id").slice(-1), function(){});
+        });
+    }
 
     for (var loop = 0; loop < 10; loop++) {
         func(loop.toString());
     }
-
-
 });

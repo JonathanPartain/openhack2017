@@ -56,7 +56,7 @@
         ".write":               "$uid === auth.uid"
       }
     },
-    "positions": {
+    "position": {
       ".validate": true,
       "$uid": {
         "$pid": {
@@ -92,7 +92,8 @@
         },
         ".read":                "auth != null",
         ".write":               "$uid === auth.uid"
-      }
+      },
+      ".read":                "auth != null"
     },
     "matches": {
       ".validate": true,
