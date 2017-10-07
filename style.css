@@ -22,6 +22,9 @@
     width: 100%;
 }
 
+.nav-item{
+	background-color: red ;
+	color: #FFF6EB ;
 
 
 .navbar {
@@ -30,6 +33,7 @@
 
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
+
 }
 
 .navbar-nav li a:hover, .navbar-nav li.active a {
@@ -37,6 +41,9 @@
     background-color: #fff !important;
 }
 
+.container-fluid{
+ 	font-color: white;}
+}
 
 
 h1 {
