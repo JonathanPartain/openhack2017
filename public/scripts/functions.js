@@ -93,34 +93,5 @@ $(document).ready(function(){
         func(loop.toString());
     }
 
-	//Toggle class on click
-
-
-
-    // $('li.point1').click(function(){
-    //     $('li.point1').removeClass('enabled'); //Class will be removed on all elements.
-    //     $(this).toggleClass('enabled'); //Class will be toggled
-    //     $('li.point1.enabled').prevAll('.point1').toggleClass('enabled'); //Toggle class on previous child elements
-    //     answers["1"] = $(this).attr("id").slice(-1);
-    // });
-
-    // $('li.point2').click(function(){
-	// 	$('li.point2').removeClass('enabled'); //Class will be removed on all elements.
-	// 	$(this).toggleClass('enabled'); //Class will be toggled
-	// 	$('li.point2.enabled').prevAll('.point2').toggleClass('enabled'); //Toggle class on previous child elements
-    //     answers["2"] = $(this).attr("id").slice(-1);
-	// });
-    // $('li.point3').click(function(){
-    //     $('li.point3').removeClass('enabled'); //Class will be removed on all elements.
-    //     $(this).toggleClass('enabled'); //Class will be toggled
-    //     $('li.point3.enabled').prevAll('.point3').toggleClass('enabled'); //Toggle class on previous child elements
-    //     answers["3"] = $(this).attr("id").slice(-1);
-    // });
-    // $('li.point4').click(function(){
-    //     $('li.point4').removeClass('enabled'); //Class will be removed on all elements.
-    //     $(this).toggleClass('enabled'); //Class will be toggled
-    //     $('li.point4.enabled').prevAll('.point4').toggleClass('enabled'); //Toggle class on previous child elements
-    //     answers["4"] = $(this).attr("id").slice(-1);
-    // });
 
 });
