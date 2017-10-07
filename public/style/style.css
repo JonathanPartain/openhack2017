@@ -8,13 +8,13 @@
     margin-bottom: 500px;
 }
 .bgcolor {
-    background-color: #FFCFC1;
+	background-color: #8A7292;
 }
 .secondbgcolor {
-    background-color: #03BD94;
+	background-color: #FFF6EB;
 }
 .thirdbgcolor {
-    background-color: #F95C4B;
+	background-image: url("betfair-pattern.png");
 }
 .container {
     margin: 0 auto;
@@ -36,7 +36,13 @@
     background-color: #fff !important;
 }
 
+.nav-link{
+	color: #F0F0F0;
+}
 
+.nav-{
+	color: #FFF6EB;
+}
 
 h1 {
     font-size: 36px;

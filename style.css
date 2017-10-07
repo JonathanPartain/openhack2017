@@ -8,14 +8,14 @@
     margin-bottom: 500px;
 }
 .bgcolor {
-    background-color: #FFCFC1;
+	background-image: url("/Users/AmeeraDarwish/Downloads/betfair-pattern.png");
 }
 .secondbgcolor {
-    background-color: #03BD94;
+	background-color: #FCEE9D;
 }
 .thirdbgcolor {
-    background-color: #F95C4B;
-}
+	background-color: #FFF6EB;
+
 .container {
     margin: 0 auto;
     width: 100%;
@@ -24,7 +24,7 @@
 
 
 .navbar {
-    background-color: : "#FFF";
+    background-color: #FFFfff;
 }
 
 .navbar li a, .navbar .navbar-brand {
