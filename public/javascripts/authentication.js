@@ -9,17 +9,18 @@ function signUp(email, password, passwordrepeat) {
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-        });
+        });//.then(window.location.replace("index.html"));
     } else alert("Oi! There seems to be a mismatch with the given passwords.");
 }
 
 function signIn(email, password) {
+    var success = true;
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
-    });
+    });//.then(window.location.replace("index.html"));
 }
 
 function fetchUser() {
