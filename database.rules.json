@@ -1,0 +1,105 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        "name":               { ".validate": true },
+        "description":        { ".validate": true },
+        "picture":            { ".validate": true },
+        "isCompany":   {
+          ".validate":            true,
+          ".write":               "!root.child($uid).child('isCompany').exists() || root.child($uid).child('isCompany').val() === false"
+        },
+        "environment":        {
+          "diversity":          { ".validate": true },
+          "sustainability":     { ".validate": true },
+          "freeCoffee":         { ".validate": true },
+          "security":           { ".validate": true },
+          "familiarity":        { ".validate": true },
+          "challenge":          { ".validate": true },
+          "recognition":        { ".validate": true },
+          "learning":           { ".validate": true },
+          "professionalGrowth": { ".validate": true },
+          "teamwork":           { ".validate": true },
+          "$other":             { ".validate": false }
+        },
+        "softSkills":        {
+          "communication":      { ".validate": true },
+          "meetingPeople":      { ".validate": true },
+          "presenting":         { ".validate": true },
+          "teamwork":           { ".validate": true },
+          "quickLearner":       { ".validate": true },
+          "stressManagement":   { ".validate": true },
+          "adaptability":       { ".validate": true },
+          "criticalThinking":   { ".validate": true },
+          "creativity":         { ".validate": true },
+          "decisionMaking":     { ".validate": true },
+          "$other":             { ".validate": false },
+          ".write":               "!root.child($uid).child('isCompany').exists() || root.child($uid).child('isCompany').val() === false"
+        },
+        "techSkills":        {
+          "coding":             { ".validate": true },
+          "architecture":       { ".validate": true },
+          "mathematics":        { ".validate": true },
+          "writing":            { ".validate": true },
+          "graphicDesign":      { ".validate": true },
+          "databases":          { ".validate": true },
+          "webDesign":          { ".validate": true },
+          "accounting":         { ".validate": true },
+          "hardware":           { ".validate": true },
+          "legal":              { ".validate": true },
+          "$other":             { ".validate": false },
+          ".write":               "!root.child($uid).child('isCompany').exists() || root.child($uid).child('isCompany').val() === false"
+        },
+        "$other":             { ".validate": false },
+        ".read":                "auth != null",
+        ".write":               "$uid === auth.uid"
+      }
+    },
+    "positions": {
+      "$uid": {
+        "$pid": {
+          "title":              { ".validate": true },
+          "description":        { ".validate": true },
+          "softSkills":         {
+            "communication":      { ".validate": true },
+            "meetingPeople":      { ".validate": true },
+            "presenting":         { ".validate": true },
+            "teamwork":           { ".validate": true },
+            "quickLearner":       { ".validate": true },
+            "stressManagement":   { ".validate": true },
+            "adaptability":       { ".validate": true },
+            "criticalThinking":   { ".validate": true },
+            "creativity":         { ".validate": true },
+            "decisionMaking":     { ".validate": true },
+            "$other":             { ".validate": false }
+          },
+          "techSkills":        {
+            "coding":             { ".validate": true },
+            "architecture":       { ".validate": true },
+            "mathematics":        { ".validate": true },
+            "writing":            { ".validate": true },
+            "graphicDesign":      { ".validate": true },
+            "databases":          { ".validate": true },
+            "webDesign":          { ".validate": true },
+            "accounting":         { ".validate": true },
+            "hardware":           { ".validate": true },
+            "legal":              { ".validate": true },
+            "$other":             { ".validate": false }
+          },
+          "$other":             { ".validate": false }
+        },
+        ".read":                "auth != null",
+        ".write":               "$uid === auth.uid"
+      }
+    },
+    "matches": {
+      "$uid": {
+        "user":               { ".validate": true },
+        "position":           { ".validate": true },
+        "$other":             { ".validate": false },
+        ".read":                "$uid === auth.uid || root.child('matches').child('uid').child('user').val() === auth.uid",
+        ".write":               "$uid === auth.uid"
+      }
+    }
+  }
+}
