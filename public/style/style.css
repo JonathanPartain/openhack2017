@@ -56,6 +56,9 @@
 }
 
 .nav-link li.active {
+
+	color: #FFF6EB;
+
 	background-color: #FFF6EB;
 
 }
