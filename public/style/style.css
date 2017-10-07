@@ -37,14 +37,20 @@
 }
 
 .nav-link{
-	color: #F0F0F0;
-}
-.nav-item {
-    padding-left: 0px;
+	color: black;
+	background-color: white;
 }
 
-.nav-{
+.nav-item .nav-link.active{
+	background-color: #FFF6EB;
+
+
+}
+
+.nav-link li.active {
 	color: #FFF6EB;
+	background-color: #FFF6EB;
+
 }
 
 h1 {
