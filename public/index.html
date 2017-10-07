@@ -5,19 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./scripts/get.js"></script>
-    <script type="text/javascript" src="./scripts/Objects.js"></script>
-    <script type="text/javascript" src="./scripts/functions.js"></script>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
-    <script>
-        var lastClicked=[0,0,0,0,0,0,0,0,0,0];
-    </script>
-
-    <script defer type="text/javascript" src="./scripts/chartjsimpl.js"></script>
-    <script defer type="text/javascript" src="./scripts/animations.js"></script>
-
     <!-- Firebase -->
     <!-- update the version number as needed -->
     <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
@@ -29,7 +16,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style/style.css" type="text/css" />
 
     <!--<link rel="stylesheet" href="style/coolstyle.css">-->
@@ -41,9 +27,10 @@
     <script type="text/javascript" src="./scripts/Objects.js"></script>
 
     <script>
+
+        // diagram animation dependencies
         window.onload = init;
         function init() {
-
             <!-- initialize the SDK after all desired features are loaded -->
             if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
             firebase.initializeApp({
@@ -56,39 +43,53 @@
             });
 
             observeAuthStateMain();
-            setTimeout(function() { initEnv(); }, 1500);
+            setTimeout(function() { initEnv(); }, 500);
         }
 
         function initEnv() {
             // Environment row initialisation:
             var db = firebase.database().ref(userEnvironmentPath);
             for (var i = 0; i < 10; i++) {
-                const env = window.document.getElementById("envRow" + i).childNodes;
+                const env = window.document.getElementById("envRow" + i).children;
                 const field = db.child(userEnvironmentKeys[i]);
-                field.on("value", function (snapshot) {
+                field.once("value", function (snapshot) {
                     const val = parseInt(snapshot.val());
-                    for (var j = 0; j <= val; j++) {
-                        env.item(j).className += " enabled";
-                    }
+                    if (isNaN(val)) return;
+                    ids += val;
+                    lastClicked.push(val);
+                    for (var j = 0; j <= val; j++) env.item(j).className += " enabled";
                 }, function (error) {
+                }, this).then(function () {
+                    document.getElementById('points').innerHTML = (30 - ids);
+                    myChart.update();
                 });
-
             }
 
             // Softskill row initialisation:
             db = firebase.database().ref(userSoftSkillPath);
             for (var i = 0; i < 10; i++) {
+                const env = window.document.getElementById("ans"+i).firstElementChild.children;
                 const field = db.child(userSoftSkillKeys[i]);
-                field.on("value", function (snapshot) {
+                field.once("value", function (snapshot) {
                     const val = parseInt(snapshot.val());
-                    for (var j = 0; j <= val; j++) {
-                        window.document.getElementById(i + "-" + j).className += " enabled";
-                    }
+                    if (isNaN(val)) return;
+                    for (var j = 0; j <= val; j++) env.item(j).className += " enabled";
                 }, function (error) {
-                });
+                }, this);
             }
         }
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts/get.js"></script>
+    <script type="text/javascript" src="./scripts/Objects.js"></script>
+    <script type="text/javascript" src="./scripts/functions.js"></script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+
+    <script defer type="text/javascript" src="./scripts/chartjsimpl.js"></script>
+    <script defer type="text/javascript" src="./scripts/animations.js"></script>
+
 
 </head>
 <body data-spy="scroll" data-target="#navbar">

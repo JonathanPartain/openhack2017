@@ -6,16 +6,15 @@
  */
 
 var ids = 0;
-// var lastClicked=[0,0,0,0,0,0,0,0,0,0];
-
-
+var lastClicked = [];
 var iterate = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
 
 $(document).ready(function(){
 
     var func = function($number) {
         $('li.point.'+$number).click(function() {
-            if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            console.log("animation: "+lastClicked);
+            if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-window.lastClicked[parseInt(parseInt(this.id)/10)]) {
                 document.getElementById('alert-row').innerHTML="";
 
                 //update id points
