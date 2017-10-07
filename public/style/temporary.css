@@ -14,6 +14,10 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
 /* The above is pretty much borrowed from Google's Firebase default layout...
     Thanks Google! */
 
+#message {
+    height: 334px;
+}
+
 #message form input {
     width: 310px;
     padding-left: 8px;
@@ -26,4 +30,8 @@ body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvet
 #message form input#submit {
     margin-top: 16px;
     text-align: center;
+}
+
+iframe {
+    border: none;
 }

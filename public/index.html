@@ -4,13 +4,38 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Firebase -->
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.5.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.5.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.5.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.5.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.5.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css" type="text/css" />
+
+    <!-- Custom (probably temporary) CSS definition -->
+    <link rel="stylesheet" href="style/temporary.css">
+    <!-- Custom Javascript -->
+    <script type="text/javascript" src="scripts/authentication.js"></script>
     <script type="text/javascript" src="scripts/get.js"></script>
     <script type="text/javascript" src="scripts/Objects.js"></script>
 
-    <!-- Bootstrap CSS -->
+    <script>
+        window.onload = init;
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css" type="text/css" />
+        function init() {
+            // window.firebase = firebase;
+            observeAuthState();
+        }
+    </script>
+
 </head>
 <body data-spy="scroll" data-target="#navbar">
 
@@ -84,7 +109,7 @@
 
 
 
-
+<!--
     <script>
         let a = new User('employee');
         document.getElementById('paragraph').innerHTML = '<p> '+ a.type+ '</p>';
@@ -94,6 +119,7 @@
     <script>
         getRequest('http://httpbin.org/get');
     </script>
+-->
 
 
 

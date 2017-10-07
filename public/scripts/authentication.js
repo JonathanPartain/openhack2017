@@ -9,8 +9,8 @@ function signUp(email, password, passwordrepeat) {
             var errorCode = error.code;
             var errorMessage = error.message;
             // ...
-        });//.then(window.location.replace("index.html"));
-    } else alert("Oi! There seems to be a mismatch with the given passwords.");
+        });
+    } else alert("Sorry, but it seems like your passwords aren't matching.");
 }
 
 function signIn(email, password) {
@@ -20,10 +20,10 @@ function signIn(email, password) {
         var errorCode = error.code;
         var errorMessage = error.message;
         // ...
-    });//.then(window.location.replace("index.html"));
+    });
 }
 
-function fetchUser() {
+function observeAuthState() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
@@ -35,9 +35,44 @@ function fetchUser() {
             var uid = user.uid;
             var providerData = user.providerData;
             // ...
+
+            $("#auth").modal("hide");
+            document.body.removeChild(document.getElementById("auth"));
+
         } else {
             // User is signed out.
             // ...
+
+            document.body.innerHTML +=
+            "<!-- Modal -->"+
+            "<div id='auth' class='modal fade' role='dialog'>"+
+                "<div class='modal-dialog'>"+
+                    "<!-- Modal content-->"+
+                    "<div class='modal-content'>"+
+                        "<div class='modal-header'>"+
+                            "<button id='signin' type='button' onclick='toggleAuth()' disabled>Sign In</button>"+
+                            "<button id='signup' type='button' onclick='toggleAuth()'>Sign Up</button>"+
+                        "</div>"+
+                            "<div class='modal-body'>"+
+                                "<iframe id='auth-frame' src='/signin.html' width='465' height='401' seamless=''></iframe>"+
+                            "</div>"+
+                    "</div>"+
+                "</div>"+
+            "</div>";
+            $("#auth").modal("show");
         }
     });
+}
+
+function toggleAuth() {
+    if (document.getElementById("auth-frame").getAttribute("src") == "/signin.html") {
+        document.getElementById("auth-frame").setAttribute("src", "/signup.html");
+        document.getElementById("signin").disabled = false;
+        document.getElementById("signup").disabled = true;
+    }
+    else {
+        document.getElementById("auth-frame").setAttribute("src", "/signin.html");
+        document.getElementById("signin").disabled = true;
+        document.getElementById("signup").disabled = false;
+    }
 }
