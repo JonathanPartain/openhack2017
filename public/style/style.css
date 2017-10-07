@@ -39,6 +39,9 @@
 .nav-link{
 	color: #F0F0F0;
 }
+.nav-item {
+    padding-left: 0px;
+}
 
 .nav-{
 	color: #FFF6EB;
