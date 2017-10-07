@@ -58,6 +58,10 @@
 	color: white;
 }
 
+.header3 {
+	font-size: 20px;
+}
+
 .nopadding {
     padding-left: 0px !important;
     padding-right: 0px !important;
@@ -110,6 +114,12 @@ p {
 	right: 100px;
 	width: 300px;
 	padding: 10px;
+}
+
+.bottom-right {
+	position: absolute;
+	width: 300px;
+	padding-top: 50px;
 }
 
 .point zero {
