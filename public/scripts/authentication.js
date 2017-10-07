@@ -34,6 +34,10 @@ function observeAuthStateMain() {
             var isAnonymous = user.isAnonymous;
             var uid = user.uid;
             var providerData = user.providerData;
+
+            document.getElementById("actualName").innerHTML=displayName;
+            document.getElementById("email").innerHTML=email;
+
             // ...
 
         } else {

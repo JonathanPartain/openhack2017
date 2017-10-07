@@ -44,20 +44,8 @@
     <script type="text/javascript" src="./scripts/Objects.js"></script>
 
     <script>
-        window.onload = init();
-        window.onload = getInfo();
-        function getInfo(){
-            if(firebase.auth().currentUser!=null){
-                document.getElementById("actualName").innerHTML = firebase.auth().currentUser.displayName;
-                document.getElementById("email").innerHTML = firebase.auth().currentUser.email;
+        window.onload = init;
 
-            }
-            else{
-                alert("yo");
-            }
-
-
-        };
         function init() {
 
             <!-- initialize the SDK after all desired features are loaded -->
