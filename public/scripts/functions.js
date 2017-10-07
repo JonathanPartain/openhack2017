@@ -9,7 +9,7 @@ var list = [
     'Critical thinking',
     'Creativity',
     'Decision Making',
-    
+
 ];
 
 function listQuestions() {
