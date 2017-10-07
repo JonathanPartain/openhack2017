@@ -6,7 +6,8 @@
  */
 
 var ids = 0;
-var lastClicked = [];
+
+lastClicked = [];
 
 function getPoints() {
     // expand to put values where they should go!
