@@ -51,7 +51,7 @@ function observeAuthStateMain() {
                             "<button id='signup' type='button' onclick='toggleAuth()'>Sign Up</button>"+
                         "</div>"+
                             "<div class='modal-body'>"+
-                                "<iframe id='auth-frame' src='/signin.html' width='465' height='401' seamless=''></iframe>"+
+                                "<iframe id='auth-frame' src='./signin.html' width='465' height='401' seamless=''></iframe>"+
                             "</div>"+
                     "</div>"+
                 "</div>"+
@@ -68,13 +68,13 @@ function observeAuthStateChild() {
 }
 
 function toggleAuth() {
-    if (document.getElementById("auth-frame").getAttribute("src") == "/signin.html") {
-        document.getElementById("auth-frame").setAttribute("src", "/signup.html");
+    if (document.getElementById("auth-frame").getAttribute("src") == "./signin.html") {
+        document.getElementById("auth-frame").setAttribute("src", "./signup.html");
         document.getElementById("signin").disabled = false;
         document.getElementById("signup").disabled = true;
     }
     else {
-        document.getElementById("auth-frame").setAttribute("src", "/signin.html");
+        document.getElementById("auth-frame").setAttribute("src", "./signin.html");
         document.getElementById("signin").disabled = true;
         document.getElementById("signup").disabled = false;
     }

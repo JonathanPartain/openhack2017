@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sign Up - Jobswipe</title>
 
+    <!-- Firebase -->
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/4.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/4.5.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/4.5.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/4.5.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.5.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-messaging.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-storage.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
@@ -29,6 +28,18 @@
     <script>
         window.onload = init;
         function init() {
+
+            <!-- initialize the SDK after all desired features are loaded -->
+            if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
+            firebase.initializeApp({
+                "apiKey": "AIzaSyBzxKLuSOjzH4YY-SQNux1gCUNfJBWPdJA",
+                "databaseURL": "https://jobswipe-9d9e4.firebaseio.com",
+                "storageBucket": "jobswipe-9d9e4.appspot.com",
+                "authDomain": "jobswipe-9d9e4.firebaseapp.com",
+                "messagingSenderId": "62253423909",
+                "projectId": "jobswipe-9d9e4"
+            });
+
             observeAuthStateChild();
         }
     </script>
