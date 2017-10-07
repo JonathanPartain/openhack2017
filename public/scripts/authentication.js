@@ -46,6 +46,8 @@ function observeAuthStateMain() {
             var providerData = user.providerData; */
             // ...
 
+            document.getElementById("email").innerHTML=user.email;
+
         } else {
             window.activeUser = undefined;
 
