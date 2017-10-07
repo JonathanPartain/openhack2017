@@ -68,16 +68,16 @@ function getPoints() {
 ids = [];
 
 var answers = {
-    "0": null,
-    "1": null,
-    "2": null,
-    "3": null,
-    "4": null,
-    "5": null,
-    "6": null,
-    "7": null,
-    "8": null,
-    "9": null,
+    "1": 0,
+    "0": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 0,
+    "7": 0,
+    "8": 0,
+    "9": 0,
 }
 
 // value of answer is str.slice(-1)
