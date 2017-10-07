@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="style/temporary.css">
     <!-- Custom Javascript -->
     <script src="scripts/authentication.js"></script>
+    <script>
+        window.onload = init;
+        function init() {
+            observeAuthStateChild();
+        }
+    </script>
 
 </head>
 <body>

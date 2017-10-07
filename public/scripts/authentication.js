@@ -23,7 +23,7 @@ function signIn(email, password) {
     });
 }
 
-function observeAuthState() {
+function observeAuthStateMain() {
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             // User is signed in.
@@ -35,9 +35,6 @@ function observeAuthState() {
             var uid = user.uid;
             var providerData = user.providerData;
             // ...
-
-            $("#auth").modal("hide");
-            document.body.removeChild(document.getElementById("auth"));
 
         } else {
             // User is signed out.
@@ -61,6 +58,12 @@ function observeAuthState() {
             "</div>";
             $("#auth").modal("show");
         }
+    });
+}
+
+function observeAuthStateChild() {
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) parent.location.reload();
     });
 }
 
