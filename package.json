@@ -1,0 +1,26 @@
+{
+  "name": "jobswipe",
+  "version": "1.0.0",
+  "description": "cool thing",
+  "main": "index.html",
+  "dependencies": {
+    "chart.js": "^2.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanPartain/openhack2017.git"
+  },
+  "keywords": [
+    "cool"
+  ],
+  "author": "ajs-cream",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JonathanPartain/openhack2017/issues"
+  },
+  "homepage": "https://github.com/JonathanPartain/openhack2017#readme"
+}

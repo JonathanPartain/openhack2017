@@ -25,6 +25,7 @@ $(document).ready(function(){
             $('li.point.'+$number+'.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
             document.getElementById('points').innerHTML = (30 - ids);
+            myChart.update();
 
         });
     };

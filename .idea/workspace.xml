@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0dadaa0-1fbe-41a5-b4aa-325f443a4387" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/animations.js" afterPath="$PROJECT_DIR$/animations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coolstyle.css" afterPath="$PROJECT_DIR$/coolstyle.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,9 +23,21 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="182" column="31" lean-forward="false" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="31" />
+            <state relative-caret-position="-1377">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chartjsimpl.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chartjsimpl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#40#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -30,8 +45,8 @@
       <file leaf-file-name="animations.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/animations.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="527">
+              <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -40,8 +55,8 @@
       <file leaf-file-name="coolstyle.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/coolstyle.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+            <state relative-caret-position="136">
+              <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -63,6 +78,7 @@
       <find>point</find>
       <find>\/\*\*\n \* Created by Vin on 07\/10\/2017\.\n \* except fuck no it wasnt this is mostly codepen referenced stuff\n \*\n \*\n \*\/\n\nvar ids \= 0\;\nvar lastClicked\=\[0\,0\,0\,0\,0\,0\,0\,0\,0\,0\]\;\n\n\$\(document\)\.ready\(function\(\)\{\n    \/\/Toggle class on click\n    \$\(\'li\.point\.zero\'\)\.click\(function\(\)\{\n\n\n        \/\/update id points\n        alert\(parseInt\(this\.id\)\)\;\n        alert\;\n        ids \= ids \- lastClicked\[parseInt\(parseInt\(this\.id\)\/10\)\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.zero\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.zero\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n\n    \$\(\'li\.point\.one\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.one\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.one\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.two\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.two\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.two\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.three\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.three\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.three\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.four\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.four\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.four\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.five\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.five\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.five\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.six\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.six\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.six\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.seven\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.seven\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.seven\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.eight\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.eight\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.eight\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n    \$\(\'li\.point\.nine\'\)\.click\(function\(\)\{\n\n        alert\(ids\)\;\n        \/\/update id points\n        ids \= ids \- lastClicked\[parseInt\(this\.id\)\/10\]\;\n        lastClicked\[parseInt\(this\.id\)\/10\] \= parseInt\(this\.id\) \% 10\;\n        ids \= ids\+\(parseInt\(this\.id\) \% 10\)\;\n        \$\(\'li\.point\.nine\'\)\.removeClass\(\'enabled\'\)\; \/\/Class will be removed on all elements\.\n        \$\(this\)\.toggleClass\(\'enabled\'\)\; \/\/Class will be toggled\n\n        \$\(\'li\.point\.nine\.enabled\'\)\.prevAll\(\'\.point\'\)\.toggleClass\(\'enabled\'\)\; \/\/Toggle class on previous child elements\n    \}\)\;\n\n\}\)\;</find>
       <find>ids = ids - lastClicked[parseInt(this.id)/10]</find>
+      <find>col-sm-6</find>
     </findStrings>
     <replaceStrings>
       <replace>point one</replace>
@@ -75,6 +91,8 @@
       <replace>point eight</replace>
       <replace>point nine</replace>
       <replace>lastClicked[parseInt(parseInt(this.id)/10)]</replace>
+      <replace>col-sm-8</replace>
+      <replace>col-sm-4</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -84,8 +102,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/hm.html" />
+        <option value="$PROJECT_DIR$/chartjs.js" />
         <option value="$PROJECT_DIR$/coolstyle.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/chartjsimpl.js" />
         <option value="$PROJECT_DIR$/animations.js" />
       </list>
     </option>
@@ -96,11 +116,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-20" />
-    <option name="y" value="55" />
+    <option name="x" value="827" />
+    <option name="y" value="124" />
     <option name="width" value="1327" />
-    <option name="height" value="859" />
+    <option name="height" value="856" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -242,15 +265,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507319400790</updated>
-      <workItem from="1507319402136" duration="21895000" />
+      <workItem from="1507319402136" duration="38270000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21895000" />
+    <option name="totallyTimeSpent" value="38270000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-20" y="55" width="1327" height="859" extended-state="0" />
+    <frame x="827" y="124" width="1327" height="856" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09916095" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -262,7 +285,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39892906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -270,24 +293,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09916095" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -308,26 +313,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chartjs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238527">
+          <caret line="14031" column="0" lean-forward="false" selection-start-line="14031" selection-start-column="0" selection-end-line="14031" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/coolstyle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="13" lean-forward="false" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        <state relative-caret-position="136">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="182" column="31" lean-forward="false" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="31" />
+        <state relative-caret-position="-1377">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chartjsimpl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#40#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/animations.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        <state relative-caret-position="527">
+          <caret line="31" column="25" lean-forward="false" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding />
         </state>
       </provider>
