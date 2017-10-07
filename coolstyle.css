@@ -63,13 +63,25 @@ h1{
     color: #192535;
 }
 
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+
+
 h4{
     color: #2E3A4A;
+}
+
+.padded-column{
+    padding-left: 35px;
 }
 
 
 .alert-expected{
     height: 60px;
+    margin:auto;
 }
 
 

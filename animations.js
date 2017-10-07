@@ -15,7 +15,6 @@ $(document).ready(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
             document.getElementById('alert-row').innerHTML="";
 
-
             //update id points
             ids = ids - lastClicked[parseInt(parseInt(this.id) / 10)];
             lastClicked[parseInt(parseInt(this.id) / 10)] = parseInt(this.id) % 10;
@@ -30,6 +29,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
 
     $('li.point.one').click(function(){
@@ -51,6 +51,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.two').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -71,6 +72,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.three').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -91,6 +93,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.four').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -111,6 +114,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.five').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -131,6 +135,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.six').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -151,6 +156,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.seven').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -171,6 +177,7 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.eight').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
@@ -191,11 +198,11 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
     $('li.point.nine').click(function(){
         if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
             document.getElementById('alert-row').innerHTML="";
-
 
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
@@ -210,6 +217,9 @@ $(document).ready(function(){
         else{
             document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
         }
+        myChart.update();
     });
 
 });
+
+
