@@ -4,7 +4,8 @@
   "description": "cool thing",
   "main": "index.html",
   "dependencies": {
-    "chart.js": "^2.7.0"
+    "chart.js": "^2.7.0",
+    "firebase-admin": "^5.4.1"
   },
   "devDependencies": {},
   "scripts": {

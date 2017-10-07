@@ -14,25 +14,25 @@ var list = [
 function listQuestions() {
 
 
-    let f = document.createElement("form");
+    var f = document.createElement("form");
     f.setAttribute("action", "someFunction()");
 
 
-    let ul = document.createElement("list");
+    var ul = document.createElement("list");
 
 
-    for (let n = 0; n < list.length; n++) {
+    for (var n = 0; n < list.length; n++) {
         // one answer for each question
-        let ans = document.createElement("list");
+        var ans = document.createElement("list");
         ans.setAttribute("class", "rating");
 
         // create li for the question
-        let li = document.createElement("li");
+        var li = document.createElement("li");
         li.appendChild(document.createTextNode(list[n]));
         ul.appendChild(li);
         // add li for the "stars"
-        for (let m = 0; m < 6; m++) {
-            let li2 = document.createElement("li");
+        for (var m = 0; m < 6; m++) {
+            var li2 = document.createElement("li");
             li2.innerHTML = m;
             li2.setAttribute("class", "point"+n);
             li2.setAttribute("id", n+"-"+m);
@@ -54,6 +54,9 @@ function listQuestions() {
 
 }
 
+
+
+
 function getPoints() {
     // expand to put values where they should go!
     alert(answers["0"] + " " + answers["1"] + " " + answers["2"]);
@@ -74,7 +77,6 @@ var answers = {
     "8": null,
     "9": null,
 }
-
 // value of answer is str.slice(-1)
 
 $(document).ready(function(){
@@ -124,3 +126,5 @@ $(document).ready(function(){
     // });
 
 });
+
+
