@@ -3,53 +3,46 @@
     align-items: center;
     align-content: center;
 }
-
-.headingFont{
-	font-color: red;
-}
-
 .extraHeight {
     margin-top: 500px;
     margin-bottom: 500px;
 }
 .bgcolor {
-	background-color: #8A7292;
+	background-color: #FCEE9D;
 }
 .secondbgcolor {
-	background-color: #FFF6EB;
+	background-color: #FCEE9D;
 }
 .thirdbgcolor {
-	background-image: url("betfair-pattern.png");
+	background-color: #FFF6EB;
 }
+
 .container {
     margin: 0 auto;
     width: 100%;
 }
 
+.nav-item{
+	background-color: red ;
+	color: #FFF6EB ;
+
+
+.navbar {
+    background-color: #FFFfff;
+}
+
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
-}
-.nav-item .nav-link.active {
-    background-color: #00ff00 !important;
-}
-
-.nav-link{
-	color: black;
-	background-color: white;
-}
-
-.nav-item .nav-link.active{
-	background-color: #FFF6EB;
-
 
 }
-.nav-item {
-    padding-left: 0px;
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e !important;
+    background-color: #fff !important;
 }
 
-.nav-tabs .active {
-    color: #00FF00;
-    background-color: #00FF00;
+.container-fluid{
+ 	font-color: white;}
 }
 
 
@@ -66,23 +59,25 @@ li {
 }
 
 
-ul.rating, ul.rating0, ul.rating1, ul.rating2, ul.rating3, ul.rating4, ul.rating5, ul.rating6, ul.rating7, ul.rating8, ul.rating9 {
+ul.rating, ul.rating0, ul.rating1, ul.rating2{
 	margin:0 auto;
 	padding:0;
 	background:rgba(245, 245, 245, 1);
 	height:30px;
-	width:152px;
+	width:126px;
 
 	border-radius:5px;
 }
 
-li.point, li.point0, li.point1, li.point2, li.point3, li.point4,  li.point5, li.point6, li.point7, li.point8, li.point9 {
+li.point, li.point0, li.point1, li.point2{
 	float:left;
     display:inline-block;
-	padding: 0;
+	/*padding: 10px;*/
+	padding:0;
+    padding-right: 10px;
 	height:20px;
 	width:20px;
-	margin:4px 0 0 4px;
+	margin:5px 0 5px 4px;
 	cursor:pointer;
 	font-size:11px;
 	text-align:center;
@@ -98,7 +93,7 @@ li.point, li.point0, li.point1, li.point2, li.point3, li.point4,  li.point5, li.
 	transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .7s ease .1s;
 }
 
-li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled, li.point3.enabled, li.point4.enabled, li.point5.enabled, li.point6.enabled, li.point7.enabled, li.point8.enabled, li.point9.enabled {
+li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled {
 	color:#FFF; /* Color fallback */
 	color:rgba(255, 255, 255, 1);
 	background-position: 100% -100%;
