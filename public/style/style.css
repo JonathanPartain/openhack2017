@@ -167,3 +167,8 @@ li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled, li.po
 .padding-number{
 	text-align: center;
 }
+
+.nav-tabs .nav-link {
+	border-top-left-radius: 0 !important;
+	border-top-right-radius: 0 !important;
+}
