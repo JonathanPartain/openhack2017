@@ -6,22 +6,24 @@
 .extraHeight {
     margin-top: 50px;
     margin-bottom: 100px;
-
 }
+
 .bgcolor {
 	background-color: #8A7292;
 }
+
 .secondbgcolor {
 	background-color: #FFF6EB;
 }
+
 .thirdbgcolor {
 	background-image: url("betfair-pattern.png");
 }
+
 .menuBar{
 	background-color: #8A7292;
 	width: 100%;
 	margin-top: 45px;
-
 }
 
 .col-sm-4{
@@ -45,10 +47,10 @@
     margin: 0 auto;
     width: 100%;
 }
+
 .nav-item {
     padding-left: 0px;
 }
-
 
 .headingFont{
 	font-family: AppleGothic;
@@ -64,11 +66,10 @@
 .navbar {
     background-color: #FFF;
 }
+
 .navbar.sticky-top {
     padding: 0px !important;
 }
-
-
 
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
@@ -86,19 +87,15 @@
 .nav-item .nav-link.active{
 	background-color: #FFF6EB;
 }
+
 .nav-item {
     padding-left: 0px;
 }
 
 .nav-link li.active {
-
 	color: #FFF6EB;
-
 	background-color: #FFF6EB;
-
-
 }
-
 
 h1 {
     font-size: 36px;
@@ -107,9 +104,22 @@ h1 {
 p {
     text-align: center;
 }
+
+.right {
+	position: absolute;
+	right: 100px;
+	width: 300px;
+	padding: 10px;
+}
+
+.point zero {
+	text-align: center;
+
+}
 li {
     padding-left: 10px;
     line-height: 2.5;
+
 }
 
 
@@ -121,6 +131,7 @@ ul.rating, ul.rating0, ul.rating1, ul.rating2, ul.rating3, ul.rating4, ul.rating
 	width:152px;
 
 	border-radius:5px;
+
 }
 
 li.point, li.point0, li.point1, li.point2, li.point3, li.point4,  li.point5, li.point6, li.point7, li.point8, li.point9 {
@@ -128,16 +139,17 @@ li.point, li.point0, li.point1, li.point2, li.point3, li.point4,  li.point5, li.
     display:inline-block;
 	/*padding: 10px;*/
 	padding:0;
-    padding-right: 10px;
+    padding-right: 0px;
 	height:20px;
 	width:20px;
-	margin:5px 0 5px 4px;
+	margin:4px 0 0px 4px;
 	cursor:pointer;
 	font-size:11px;
 	text-align:center;
 	line-height:20px;
 	color:#FFF; /* Color fallback */
 	color:rgba(152, 152, 152, 1);
+
 
 	border-radius:100px;
 
@@ -151,4 +163,9 @@ li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled, li.po
 	color:#FFF; /* Color fallback */
 	color:rgba(255, 255, 255, 1);
 	background-position: 100% -100%;
+
+}
+
+.padding-number{
+	text-align: center;
 }
