@@ -45,3 +45,48 @@ h1 {
 p {
     text-align: center;
 }
+li {
+    padding-left: 10px;
+    line-height: 2.5;
+}
+
+
+ul.rating, ul.rating0, ul.rating1, ul.rating2{
+	margin:0 auto;
+	padding:0;
+	background:rgba(245, 245, 245, 1);
+	height:30px;
+	width:126px;
+
+	border-radius:5px;
+}
+
+li.point, li.point0, li.point1, li.point2{
+	float:left;
+    display:inline-block;
+	/*padding: 10px;*/
+	padding:0;
+    padding-right: 10px;
+	height:20px;
+	width:20px;
+	margin:5px 0 5px 4px;
+	cursor:pointer;
+	font-size:11px;
+	text-align:center;
+	line-height:20px;
+	color:#FFF; /* Color fallback */
+	color:rgba(152, 152, 152, 1);
+
+	border-radius:100px;
+
+	background-size: 100% 200%;
+	background-image: linear-gradient(to bottom, rgba(199, 199, 199, 1) 50%, rgba(33, 172, 224, 1) 50%);
+
+	transition: background-position .3s cubic-bezier(0.19, 1, 0.22, 1) .1s, color .7s ease .1s;
+}
+
+li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled {
+	color:#FFF; /* Color fallback */
+	color:rgba(255, 255, 255, 1);
+	background-position: 100% -100%;
+}
