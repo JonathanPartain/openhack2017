@@ -9,7 +9,6 @@ var list = [
     'Critical thinking',
     'Creativity',
     'Decision Making',
-
 ];
 
 function listQuestions() {
@@ -60,17 +59,12 @@ function listQuestions() {
 
 }
 
-function getPoints() {
-    // expand to put values where they should go!
-    alert(answers["0"] + " " + answers["1"] + " " + answers["2"]);
-
-}
 
 ids = [];
 
 var answers = {
-    "1": 0,
     "0": 0,
+    "1": 0,
     "2": 0,
     "3": 0,
     "4": 0,
