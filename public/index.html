@@ -56,22 +56,38 @@
             });
 
             observeAuthStateMain();
-            setTimeout(function() { initEnv(); }, 1000);
+            setTimeout(function() { initEnv(); }, 1500);
         }
 
         function initEnv() {
-            // Environment row generation:
+            // Environment row initialisation:
             var db = firebase.database().ref(userEnvironmentPath);
             for (var i = 0; i < 10; i++) {
-                const env = window.document.getElementById("envRow"+i).childNodes;
+                const env = window.document.getElementById("envRow" + i).childNodes;
                 const field = db.child(userEnvironmentKeys[i]);
-                field.on("value", function(snapshot) {
+                field.on("value", function (snapshot) {
                     const val = parseInt(snapshot.val());
-                    for (var j = 0; j <= val; j++) { env.item(j).className += " enabled"; }
-                }, function (error) {});
+                    for (var j = 0; j <= val; j++) {
+                        env.item(j).className += " enabled";
+                    }
+                }, function (error) {
+                });
 
             }
-        };
+
+            // Softskill row initialisation:
+            db = firebase.database().ref(userSoftSkillPath);
+            for (var i = 0; i < 10; i++) {
+                const field = db.child(userSoftSkillKeys[i]);
+                field.on("value", function (snapshot) {
+                    const val = parseInt(snapshot.val());
+                    for (var j = 0; j <= val; j++) {
+                        window.document.getElementById(i + "-" + j).className += " enabled";
+                    }
+                }, function (error) {
+                });
+            }
+        }
     </script>
 
 </head>

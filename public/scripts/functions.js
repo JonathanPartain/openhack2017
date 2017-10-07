@@ -91,6 +91,10 @@ $(document).ready(function(){
     		$(this).toggleClass('enabled'); //Class will be toggled
     		$('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
             answers[$num] = $(this).attr("id").slice(-1);
+
+            // Firebase related things/ updating the current users database:
+            var db = firebase.database().ref(userSoftSkillPath);
+            db.child(userSoftSkillKeys[$num]).set($(this).attr("id").slice(-1), function(){});
     	});
     }
 
