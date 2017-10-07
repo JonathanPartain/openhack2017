@@ -77,6 +77,35 @@
                 }, function (error) {
                 }, this);
             }
+
+            // get company SoftSkills
+            const root = firebase.database().ref();
+            var ex = root.child('position/');
+            console.log(ex);
+            ex.once("value", function(snapshot) {
+                var obj = snapshot.val();
+
+                for (key in obj) {
+                    var value = obj[key];
+                    for (var index = 0; index < value.length; index++) {
+                        var skills = value[index];
+                        if (skills != undefined) {
+                            var soft = skills.SoftSkills;
+                            getPoints(soft);
+                            var tech = skills.TechSkills;
+
+                        }
+
+                    }
+
+                }
+
+            }, function(error) {
+
+            }, this);
+
+
+
         }
     </script>
 

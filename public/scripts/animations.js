@@ -8,19 +8,84 @@
 var ids = 0;
 var lastClicked = [];
 
-function getPoints() {
-    // expand to put values where they should go!
-    var a = compare(Company1, lastClicked);
+function getPoints(object) {
 
-    if (a) {
-        alert('MATCH!');
+    var arr = [];
+    var boolean = true;
+    console.log(object);
+
+    db = firebase.database().ref(userSoftSkillPath);
+    for (var i = 0; i < 10; i++) {
+        const field = db.child(userSoftSkillKeys[i]);
+        field.once("value", function (snapshot) {
+            var value = parseInt(snapshot.val());
+            if (isNaN(value)) {
+                value = 0;
+            }
+            arr.push(value);
+
+        }, function (error) {
+        }, this).then(function() {
+            // compare stuffs
+            if (i == 0) {
+                if(value < object.Adaptability) {
+                    boolean = false;
+                }
+            }
+            if (i == 1) {
+                if(value < object.Communication) {
+                    boolean = false;
+                }
+            }
+            if (i == 2) {
+                if(value < object.Creativity) {
+                    boolean = false;
+                }
+            }
+            if (i == 3) {
+                if(value < object.CriticalThinking) {
+                    boolean = false;
+                }
+            }
+            if (i == 4) {
+                if(value < object.DecisionMaking) {
+                    boolean = false;
+                }
+            }
+            if (i == 5) {
+                if(value < object.MeetingPeople) {
+                    boolean = false;
+                }
+            }
+            if (i == 6) {
+                if(value < object.Presenting) {
+                    boolean = false;
+                }
+            }
+            if (i == 7) {
+                if(value < object.QuickLearner) {
+                    boolean = false;
+                }
+            }
+            if (i == 8) {
+                if(value < object.StressManagement) {
+                    boolean = false;
+                }
+            }
+            if (i == 9) {
+                if(value < object.Teamwork) {
+                    boolean = false;
+                }
+            }
+
+        });
     }
-    else {
-        alert('NO MATCH');
-    }
+    alert(boolean);
+
+    //compare(object, window.activeUser);
 
 }
-function compare(company, user) {
+function compare(object,company, user) {
     var match = true;
     if (user[0] < company.communication) {
         return false;
@@ -95,12 +160,7 @@ $(document).ready(function(){
 
     var func = function($number) {
         $('li.point.'+$number).click(function() {
-<<<<<<< HEAD
-            //console.log("animation: "+lastClicked);
-            
-=======
             while (lastClicked.length < 10) lastClicked.push(0);
->>>>>>> e8834b9eed1ac393ab27f0cee8dd052f1feb37b2
             if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-window.lastClicked[parseInt(parseInt(this.id)/10)]) {
                 document.getElementById('alert-row').innerHTML="";
 
