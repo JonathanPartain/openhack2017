@@ -64,12 +64,10 @@ ul.rating, ul.rating0, ul.rating1, ul.rating2, ul.rating3, ul.rating4, ul.rating
 li.point, li.point0, li.point1, li.point2, li.point3, li.point4,  li.point5, li.point6, li.point7, li.point8, li.point9 {
 	float:left;
     display:inline-block;
-	/*padding: 10px;*/
-	padding:0;
-    padding-right: 10px;
+	padding: 0;
 	height:20px;
 	width:20px;
-	margin:5px 0 5px 4px;
+	margin:4px 0 0 4px;
 	cursor:pointer;
 	font-size:11px;
 	text-align:center;

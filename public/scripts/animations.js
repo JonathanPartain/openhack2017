@@ -30,6 +30,10 @@ $(document).ready(function(){
                 document.getElementById('points').innerHTML = (30 - ids);
                 myChart.update();
 
+                // Firebase related things/ updating the current users database:
+                var db = firebase.database().ref(userEnvironmentPath);
+                db.child(userEnvironmentKeys[parseInt(parseInt(this.id) / 10)]).set(parseInt(this.id) % 10, function(){});
+
             } else {
                 document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
             }

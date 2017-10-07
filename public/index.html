@@ -15,11 +15,8 @@
         var lastClicked=[0,0,0,0,0,0,0,0,0,0];
     </script>
 
-
     <script defer type="text/javascript" src="./scripts/chartjsimpl.js"></script>
-    <script defer type="text/javascript" src="./scripts/index.js"></script>
     <script defer type="text/javascript" src="./scripts/animations.js"></script>
-
 
     <!-- Firebase -->
     <!-- update the version number as needed -->
@@ -59,7 +56,22 @@
             });
 
             observeAuthStateMain();
+            setTimeout(function() { initEnv(); }, 1000);
         }
+
+        function initEnv() {
+            // Environment row generation:
+            var db = firebase.database().ref(userEnvironmentPath);
+            for (var i = 0; i < 10; i++) {
+                const env = window.document.getElementById("envRow"+i).childNodes;
+                const field = db.child(userEnvironmentKeys[i]);
+                field.on("value", function(snapshot) {
+                    const val = parseInt(snapshot.val());
+                    for (var j = 0; j <= val; j++) { env.item(j).className += " enabled"; }
+                }, function (error) {});
+
+            }
+        };
     </script>
 
 </head>
@@ -111,7 +123,7 @@
                             <div class="col-sm-6">
 
 
-                                    <canvas id="myChart" width="100" height="100" style={background-color: blue;}></canvas>
+                                    <canvas id="myChart" width="100" height="100" style="{background-color: blue;}"></canvas>
 
 
                             </div>
@@ -127,15 +139,13 @@
                                     </h2>
                                 </div>
 
-
-
                                 <div class="row">
                                     <div class="col-sm-4">
                                         Learning
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow0" class="rating">
                                                 <li class="point zero enabled" id="0">0</li>
                                                 <li class="point zero" id="1">1</li>
                                                 <li class="point zero" id="2">2</li>
@@ -153,7 +163,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow1" class="rating">
                                                 <li class="point one enabled" id="10">0</li>
                                                 <li class="point one" id="11">1</li>
                                                 <li class="point one" id="12">2</li>
@@ -171,7 +181,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow2" class="rating">
                                                 <li class="point two enabled" id="20">0</li>
                                                 <li class="point two" id="21">1</li>
                                                 <li class="point two" id="22">2</li>
@@ -189,7 +199,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow3" class="rating">
                                                 <li class="point three enabled" id="30">0</li>
                                                 <li class="point three" id="31">1</li>
                                                 <li class="point three" id="32">2</li>
@@ -207,7 +217,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow4" class="rating">
                                                 <li class="point four enabled" id="40">0</li>
                                                 <li class="point four" id="41">1</li>
                                                 <li class="point four" id="42">2</li>
@@ -225,7 +235,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow5" class="rating">
                                                 <li class="point five enabled" id="50">0</li>
                                                 <li class="point five" id="51">1</li>
                                                 <li class="point five" id="52">2</li>
@@ -243,7 +253,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow6" class="rating">
                                                 <li class="point six enabled" id="60">0</li>
                                                 <li class="point six" id="61">1</li>
                                                 <li class="point six" id="62">2</li>
@@ -260,7 +270,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow7" class="rating">
                                                 <li class="point seven enabled" id="70">0</li>
                                                 <li class="point seven" id="71">1</li>
                                                 <li class="point seven" id="72">2</li>
@@ -278,7 +288,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow8" class="rating">
                                                 <li class="point eight enabled" id="80">0</li>
                                                 <li class="point eight" id="81">1</li>
                                                 <li class="point eight" id="82">2</li>
@@ -296,7 +306,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow9" class="rating">
                                                 <li class="point nine enabled" id="90">0</li>
                                                 <li class="point nine" id="91">1</li>
                                                 <li class="point nine" id="92">2</li>
@@ -393,18 +403,6 @@
 
 
     </div>
-
-<!--
-    <script>
-        let a = new User('employee');
-        document.getElementById('paragraph').innerHTML = '<p> '+ a.type+ '</p>';
-    </script>
-
-
-    <script>
-        getRequest('http://httpbin.org/get');
-    </script>
--->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
