@@ -10,25 +10,33 @@ var lastClicked=[0,0,0,0,0,0,0,0,0,0];
 
 $(document).ready(function(){
     //Toggle class on click
-    if(document.getElementById('points')>=(parseInt(this.id)%10)){
-    $('li.point.zero').click(function() {
-        //update id points
-        ids = ids - lastClicked[parseInt(parseInt(this.id) / 10)];
-        lastClicked[parseInt(parseInt(this.id) / 10)] = parseInt(this.id) % 10;
-        ids = ids + (parseInt(this.id) % 10);
-        $('li.point.zero').removeClass('enabled'); //Class will be removed on all elements.
-        $(this).toggleClass('enabled'); //Class will be toggled
+    $('li.point.zero').click(function(){
 
-        $('li.point.zero.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        document.getElementById('points').innerHTML = (30 - ids);
-    
 
+            //update id points
+            ids = ids - lastClicked[parseInt(parseInt(this.id) / 10)];
+            lastClicked[parseInt(parseInt(this.id) / 10)] = parseInt(this.id) % 10;
+            ids = ids + (parseInt(this.id) % 10);
+            $('li.point.zero').removeClass('enabled'); //Class will be removed on all elements.
+            $(this).toggleClass('enabled'); //Class will be toggled
+
+            $('li.point.zero.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
+
+            document.getElementById('points').innerHTML = (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
 
     $('li.point.one').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -39,10 +47,16 @@ $(document).ready(function(){
         $('li.point.one.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.two').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -53,10 +67,16 @@ $(document).ready(function(){
         $('li.point.two.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.three').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -67,10 +87,16 @@ $(document).ready(function(){
         $('li.point.three.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.four').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -81,10 +107,16 @@ $(document).ready(function(){
         $('li.point.four.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.five').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -95,10 +127,16 @@ $(document).ready(function(){
         $('li.point.five.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.six').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -109,10 +147,16 @@ $(document).ready(function(){
         $('li.point.six.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.seven').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -123,10 +167,16 @@ $(document).ready(function(){
         $('li.point.seven.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.eight').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -137,10 +187,16 @@ $(document).ready(function(){
         $('li.point.eight.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
 
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
     $('li.point.nine').click(function(){
+        if(document.getElementById('points').innerHTML >= (parseInt(this.id)%10)-lastClicked[parseInt(parseInt(this.id)/10)]) {
+            document.getElementById('alert-row').innerHTML="";
 
-        alert(ids);
+
         //update id points
         ids = ids - lastClicked[parseInt(parseInt(this.id)/10)];
         lastClicked[parseInt(parseInt(this.id)/10)] = parseInt(this.id) % 10;
@@ -150,6 +206,10 @@ $(document).ready(function(){
 
         $('li.point.nine.enabled').prevAll('.point').toggleClass('enabled'); //Toggle class on previous child elements
         document.getElementById('points').innerHTML= (30 - ids);
+        }
+        else{
+            document.getElementById('alert-row').innerHTML="<div class=\"alert alert-danger\" role=\"alert\"> <strong>Oh snap!</strong> Seems you're all out of points - try relocating some. </div>";
+        }
     });
 
 });
