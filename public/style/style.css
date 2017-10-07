@@ -3,6 +3,11 @@
     align-items: center;
     align-content: center;
 }
+
+.headingFont{
+	font-color: red;
+}
+
 .extraHeight {
     margin-top: 500px;
     margin-bottom: 500px;
@@ -20,9 +25,6 @@
     margin: 0 auto;
     width: 100%;
 }
-.navbar {
-    background-color: #FFF;
-}
 
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
@@ -32,7 +34,14 @@
 }
 
 .nav-link{
-	color: #F0F0F0;
+	color: black;
+	background-color: white;
+}
+
+.nav-item .nav-link.active{
+	background-color: #FFF6EB;
+
+
 }
 .nav-item {
     padding-left: 0px;
