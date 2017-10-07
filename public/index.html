@@ -78,6 +78,19 @@
                 }, function (error) {
                 }, this);
             }
+
+            // Hardskill row initialisation:
+            db = firebase.database().ref(userHardSkillPath);
+            for (var i = 0; i < 10; i++) {
+                const env = window.document.getElementById("hans"+i).firstElementChild.children;
+                const field = db.child(userHardSkillKeys[i]);
+                field.once("value", function (snapshot) {
+                    const val = parseInt(snapshot.val());
+                    if (isNaN(val)) return;
+                    for (var j = 0; j <= val; j++) env.item(j).className += " enabled";
+                }, function (error) {
+                }, this);
+            }
         }
     </script>
 

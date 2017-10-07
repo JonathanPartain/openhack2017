@@ -94,22 +94,22 @@ $(document).ready(function(){
 
     var func = function($num) {
 
-        $('#softskillanswers li.point'+$num).click(function(){
-    		$('li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
+        $('div#softskills * li.point'+$num).click(function(){
+    		$('div#softskills * li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
     		$(this).toggleClass('enabled'); //Class will be toggled
-    		$('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
-            answers[$num] = $(this).attr("id").slice(-1);
+    		$('div#softskills * li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
+            sanswers[$num] = $(this).attr("id").slice(-1);
 
             // Firebase related things/ updating the current users database:
             var db = firebase.database().ref(userSoftSkillPath);
             db.child(userSoftSkillKeys[$num]).set($(this).attr("id").slice(-1), function(){});
     	});
 
-        $('#hardskillanswers li.point'+$num).click(function(){
-            $('li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
+        $('div#hardskills * li.point'+$num).click(function(){
+            $('div#hardskills * li.point'+$num).removeClass('enabled'); //Class will be removed on all elements.
             $(this).toggleClass('enabled'); //Class will be toggled
-            $('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
-            answers[$num] = $(this).attr("id").slice(-1);
+            $('div#hardskills * li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
+            hanswers[$num] = $(this).attr("id").slice(-1);
 
             // Firebase related things/ updating the current users database:
             var db = firebase.database().ref(userHardSkillPath);
