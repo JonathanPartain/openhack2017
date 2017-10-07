@@ -22,9 +22,10 @@
     width: 100%;
 }
 
-.nav-item{
-	background-color: red ;
-	color: #FFF6EB ;
+.nav-item {
+	background-color: red;
+	color: #FFF6EB;
+}
 
 
 .navbar {
@@ -42,7 +43,7 @@
 }
 
 .container-fluid{
- 	font-color: white;}
+ 	font-color: white;
 }
 
 
