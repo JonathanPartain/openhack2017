@@ -1,7 +1,6 @@
 .center {
     text-align: center;
     align-items: center;
-    align-content: center;
 }
 
 .extraHeight {
@@ -21,8 +20,7 @@
 .menuBar{
 	background-color: #8A7292;
 	width: 100%;
-	height: 50px;
-	margin-top: 80px;
+	margin-top: 48px;
 
 }
 
@@ -58,9 +56,7 @@
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
 }
-.nav-item .nav-link.active {
-    background-color: #00ff00 !important;
-}
+
 .nav-tabs li a:hover {
     background-color: #FFF6EB;
 }
