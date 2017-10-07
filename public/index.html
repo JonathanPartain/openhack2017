@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts/get.js"></script>
+    <script type="text/javascript" src="./scripts/Objects.js"></script>
+    <script type="text/javascript" src="./scripts/functions.js"></script>
+
     <!-- Firebase -->
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/4.5.0/firebase-app.js"></script>
@@ -18,6 +23,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style/style.css" type="text/css" />
 
     <!-- Custom (probably temporary) CSS definition -->
@@ -70,17 +76,42 @@
 
             </div>
             <div class="col-8 secondbgcolor">
-                <div class="row center extraHeight" id="env">
+                <div class="center extraHeight" id="env">
                     <p>
                         environment
                     </p>
 
                 </div>
 
-                <div class="row center extraHeight" id="softskills">
+                <div class="extraHeight" id="softskills">
                     <p>
                         softskills
                     </p>
+                    <div class="row">
+                        <div class="col-4">
+
+                        </div>
+                        <div class="col-4" id="softskillsanswers">
+                            <p id="ans0">
+
+                            </p>
+                            <br />
+                            <p id="ans1">
+
+                            </p>
+                            <br  />
+                            <p id="ans2">
+
+                            </p>
+                        </div>
+
+                        <div clas ="col-4"id="softskillsform">
+                            <script>listQuestions();</script>
+
+                        </div>
+                    </div>
+
+
 
                 </div>
 
@@ -104,9 +135,6 @@
 
 
 
-
-
-
 <!--
     <script>
         let a = new User('employee');
@@ -118,7 +146,6 @@
         getRequest('http://httpbin.org/get');
     </script>
 -->
-
 
 
     <!-- Optional JavaScript -->
