@@ -34,7 +34,12 @@ function listQuestions() {
         for (let m = 0; m < 6; m++) {
             let li2 = document.createElement("li");
             li2.innerHTML = m;
-            li2.setAttribute("class", "point"+n);
+            if (m === 0) {
+                li2.setAttribute("class", "enabled point"+n);
+            } else {
+                li2.setAttribute("class", "point"+n);
+            }
+
             li2.setAttribute("id", n+"-"+m);
             ans.appendChild(li2);
 
