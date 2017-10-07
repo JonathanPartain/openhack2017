@@ -2,13 +2,15 @@
     text-align: center;
     align-items: center;
     align-content: center;
-	padding:20px;
+}
+
+.headingFont{
+	font-color: red;
 }
 
 .extraHeight {
-    margin-top: 40px;
-    margin-bottom: 100px;
-
+    margin-top: 500px;
+    margin-bottom: 500px;
 }
 .bgcolor {
 	background-color: #8A7292;
@@ -18,14 +20,6 @@
 }
 .thirdbgcolor {
 	background-image: url("betfair-pattern.png");
-}
-
-.menuBar{
-	background-color: #8A7292;
-	width: 100%;
-	height: 50px;
-	margin-top: 80px;
-
 }
 .container {
     margin: 0 auto;

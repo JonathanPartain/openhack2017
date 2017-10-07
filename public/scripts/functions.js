@@ -1,15 +1,14 @@
 var list = [
-    'Communication',
-    'Meeting New People',
-    'Presenting',
-    'Teamwork',
-    'Quick Learner',
-    'Stress Management',
-    'Adaptability',
-    'Critical thinking',
-    'Creativity',
-    'Decision Making',
-
+    'How cool is Jonathan?',
+    'How good is he at coming up with questions?',
+    'How much variation is there in these questions?',
+    'This is not even a question, what?',
+    'Oh wait, it was.. Well, my bad I guess',
+    'This is all totally useful, I promise! (not)',
+    'Keep filling in sentences until I reach a good number',
+    'If youre tired of javascript, try another language',
+    'Bla bla lorem ipsum batman robin',
+    'Monkey banana blues machine',
 ];
 
 function listQuestions() {
