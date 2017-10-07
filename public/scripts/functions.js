@@ -9,7 +9,6 @@ var list = [
     'Critical thinking',
     'Creativity',
     'Decision Making',
-
 ];
 
 function listQuestions() {
@@ -60,17 +59,12 @@ function listQuestions() {
 
 }
 
-function getPoints() {
-    // expand to put values where they should go!
-    alert(answers["0"] + " " + answers["1"] + " " + answers["2"]);
-
-}
 
 ids = [];
 
 var answers = {
-    "1": 0,
     "0": 0,
+    "1": 0,
     "2": 0,
     "3": 0,
     "4": 0,
@@ -91,6 +85,10 @@ $(document).ready(function(){
     		$(this).toggleClass('enabled'); //Class will be toggled
     		$('li.point'+$num+'.enabled').prevAll('.point'+$num).toggleClass('enabled'); //Toggle class on previous child elements
             answers[$num] = $(this).attr("id").slice(-1);
+
+            // Firebase related things/ updating the current users database:
+            var db = firebase.database().ref(userSoftSkillPath);
+            db.child(userSoftSkillKeys[$num]).set($(this).attr("id").slice(-1), function(){});
     	});
     }
 

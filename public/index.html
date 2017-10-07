@@ -5,22 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./scripts/get.js"></script>
-    <script type="text/javascript" src="./scripts/Objects.js"></script>
-    <script type="text/javascript" src="./scripts/functions.js"></script>
-
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
-    <script>
-        var lastClicked=[0,0,0,0,0,0,0,0,0,0];
-    </script>
-
-
-    <script defer type="text/javascript" src="./scripts/chartjsimpl.js"></script>
-    <script defer type="text/javascript" src="./scripts/index.js"></script>
-    <script defer type="text/javascript" src="./scripts/animations.js"></script>
-
-
     <!-- Firebase -->
     <!-- update the version number as needed -->
     <script defer src="https://www.gstatic.com/firebasejs/4.5.0/firebase-app.js"></script>
@@ -32,7 +16,6 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
     <link rel="stylesheet" href="style/style.css" type="text/css" />
 
     <!--<link rel="stylesheet" href="style/coolstyle.css">-->
@@ -44,9 +27,10 @@
     <script type="text/javascript" src="./scripts/Objects.js"></script>
 
     <script>
+
+        // diagram animation dependencies
         window.onload = init;
         function init() {
-
             <!-- initialize the SDK after all desired features are loaded -->
             if (typeof firebase === 'undefined') throw new Error('hosting/init-error: Firebase SDK not detected. You must include it before /__/firebase/init.js');
             firebase.initializeApp({
@@ -59,8 +43,53 @@
             });
 
             observeAuthStateMain();
+            setTimeout(function() { initEnv(); }, 500);
+        }
+
+        function initEnv() {
+            // Environment row initialisation:
+            var db = firebase.database().ref(userEnvironmentPath);
+            for (var i = 0; i < 10; i++) {
+                const env = window.document.getElementById("envRow" + i).children;
+                const field = db.child(userEnvironmentKeys[i]);
+                field.once("value", function (snapshot) {
+                    const val = parseInt(snapshot.val());
+                    if (isNaN(val)) return;
+                    ids += val;
+                    lastClicked.push(val);
+                    for (var j = 0; j <= val; j++) env.item(j).className += " enabled";
+                }, function (error) {
+                }, this).then(function () {
+                    document.getElementById('points').innerHTML = (30 - ids);
+                    myChart.update();
+                });
+            }
+
+            // Softskill row initialisation:
+            db = firebase.database().ref(userSoftSkillPath);
+            for (var i = 0; i < 10; i++) {
+                const env = window.document.getElementById("ans"+i).firstElementChild.children;
+                const field = db.child(userSoftSkillKeys[i]);
+                field.once("value", function (snapshot) {
+                    const val = parseInt(snapshot.val());
+                    if (isNaN(val)) return;
+                    for (var j = 0; j <= val; j++) env.item(j).className += " enabled";
+                }, function (error) {
+                }, this);
+            }
         }
     </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts/get.js"></script>
+    <script type="text/javascript" src="./scripts/Objects.js"></script>
+    <script type="text/javascript" src="./scripts/functions.js"></script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+
+    <script defer type="text/javascript" src="./scripts/chartjsimpl.js"></script>
+    <script defer type="text/javascript" src="./scripts/animations.js"></script>
+
 
 </head>
 <body data-spy="scroll" data-target="#navbar">
@@ -115,13 +144,13 @@
 
                         <div class="row">
                             <div class="col-sm-6">
-                                <p>What do you prioritise in at the work place? </p>
+                                <p>What do you prioritize at your workplace? </p>
                                 <div class="paddingCanvas">
 
-                                    <canvas id="myChart" width="100" height="100"
-                                            style={background-color:blue;}></canvas>
+                                    <canvas id="myChart" width="100" height="100" style="{background-color: blue;}"></canvas>
 
                                 </div>
+
                             </div>
                             <div class="col-sm-6 padded-column">
 
@@ -133,17 +162,15 @@
                                     </h2>
                                 </div>
 
-
-
                                 <div class="row">
                                     <div class="col-sm-4">
                                         Learning
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow0" class="rating">
+                                                <li class="point zero enabled" id="0">0</li>
 
-                                                <li class="point zero enabled " id="0">0</li>
                                                 <li class="point zero" id="1">1</li>
                                                 <li class="point zero" id="2">2</li>
                                                 <li class="point zero" id="3">3</li>
@@ -163,6 +190,7 @@
                                         <div class="container">
                                             <ul class="rating">
                                                 <li class="point one enabled" id="10">0</li>
+
                                                 <li class="point one" id="11">1</li>
                                                 <li class="point one" id="12">2</li>
                                                 <li class="point one" id="13">3</li>
@@ -179,7 +207,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow2" class="rating">
                                                 <li class="point two enabled" id="20">0</li>
                                                 <li class="point two" id="21">1</li>
                                                 <li class="point two" id="22">2</li>
@@ -197,7 +225,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow3" class="rating">
                                                 <li class="point three enabled" id="30">0</li>
                                                 <li class="point three" id="31">1</li>
                                                 <li class="point three" id="32">2</li>
@@ -215,7 +243,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow4" class="rating">
                                                 <li class="point four enabled" id="40">0</li>
                                                 <li class="point four" id="41">1</li>
                                                 <li class="point four" id="42">2</li>
@@ -233,7 +261,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow5" class="rating">
                                                 <li class="point five enabled" id="50">0</li>
                                                 <li class="point five" id="51">1</li>
                                                 <li class="point five" id="52">2</li>
@@ -251,7 +279,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow6" class="rating">
                                                 <li class="point six enabled" id="60">0</li>
                                                 <li class="point six" id="61">1</li>
                                                 <li class="point six" id="62">2</li>
@@ -268,7 +296,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow7" class="rating">
                                                 <li class="point seven enabled" id="70">0</li>
                                                 <li class="point seven" id="71">1</li>
                                                 <li class="point seven" id="72">2</li>
@@ -286,7 +314,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow8" class="rating">
                                                 <li class="point eight enabled" id="80">0</li>
                                                 <li class="point eight" id="81">1</li>
                                                 <li class="point eight" id="82">2</li>
@@ -304,7 +332,7 @@
                                     </div>
                                     <div class="col-sm-8">
                                         <div class="container">
-                                            <ul class="rating">
+                                            <ul id="envRow9" class="rating">
                                                 <li class="point nine enabled" id="90">0</li>
                                                 <li class="point nine" id="91">1</li>
                                                 <li class="point nine" id="92">2</li>
@@ -406,18 +434,6 @@
 
 
     </div>
-
-<!--
-    <script>
-        let a = new User('employee');
-        document.getElementById('paragraph').innerHTML = '<p> '+ a.type+ '</p>';
-    </script>
-
-
-    <script>
-        getRequest('http://httpbin.org/get');
-    </script>
--->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

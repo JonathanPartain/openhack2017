@@ -2,7 +2,7 @@
  * Created by julian.bock on 2017-10-07.
  */
 
-const userPath = "users/" +userId+ "/";
+const userPath = "users/" +window.activeUser.uid+ "/";
 const userKeys = [
     "Name",
     "Description",
@@ -55,7 +55,7 @@ const userTechSkillKeys = [
 const userHardSkillPath = userTechSkillPath;
 const userHardSkillKeys = userTechSkillKeys;
 
-const positionPath = "positions/" +userId+ "/" +positionId+ "/";
+const positionPath = "positions/" +window.activeUser.uid+ "/" +positionId+ "/";
 const positionKeys = [
     "Title",
     "Description",
