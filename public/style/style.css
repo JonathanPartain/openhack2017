@@ -2,12 +2,12 @@
     text-align: center;
     align-items: center;
     align-content: center;
-	padding:20px;
 }
 
 .extraHeight {
     margin-top: 40px;
     margin-bottom: 100px;
+
 }
 .bgcolor {
 	background-color: #8A7292;
@@ -25,6 +25,7 @@
 	margin-top: 80px;
 
 }
+
 .container {
     margin: 0 auto;
     width: 100%;
@@ -53,13 +54,12 @@
 }
 
 
+
 .navbar li a, .navbar .navbar-brand {
     color: #000 !important;
 }
-
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #f4511e !important;
-    background-color: #fff !important;
+.nav-item .nav-link.active {
+    background-color: #00ff00 !important;
 }
 .nav-tabs li a:hover {
     background-color: #FFF6EB;
@@ -73,6 +73,9 @@
 .nav-item .nav-link.active{
 	background-color: #FFF6EB;
 }
+.nav-item {
+    padding-left: 0px;
+}
 
 .nav-link li.active {
 
@@ -80,7 +83,9 @@
 
 	background-color: #FFF6EB;
 
+
 }
+
 
 h1 {
     font-size: 36px;
