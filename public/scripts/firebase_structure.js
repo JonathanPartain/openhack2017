@@ -55,17 +55,18 @@ const userTechSkillKeys = [
 const userHardSkillPath = userTechSkillPath;
 const userHardSkillKeys = userTechSkillKeys;
 
+/*
 const positionPath = "positions/" +window.activeUser.uid+ "/" +positionId+ "/";
 const positionKeys = [
     "Title",
     "Description",
-];
+]; */
 
-const positionSoftSkillPath = positionPath +"SoftSkills/";
+// const positionSoftSkillPath = positionPath +"SoftSkills/";
 const positionSoftSkillKeys = userSoftSkillKeys;
 
-const positionTechSkillPath = positionPath +"TechSkills/";
+// const positionTechSkillPath = positionPath +"TechSkills/";
 const positionTechSkillKeys = userTechSkillKeys;
 
-const positionHardSkillPath = positionTechSkillPath;
+// const positionHardSkillPath = positionTechSkillPath;
 const positionHardSkillKeys = positionTechSkillKeys;
