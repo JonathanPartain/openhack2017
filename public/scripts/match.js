@@ -63,6 +63,18 @@ function score(currentObject) {
         currentScore += compare(userEnvironmentKeys, window.activeUser.Environment, currentObject.get("env"));
         currentScore += compare(userSoftSkillKeys, window.activeUser.SoftSkills, currentObject.get("soft"));
         currentScore += compare(userTechSkillKeys, window.activeUser.TechSkills, currentObject.get("tech"));
-        window.document.body.innerHTML += "<p>"+currentObject.get("cid")+" scored "+currentScore+"!</p>";
+
+        var currentMax = 0;
+        for (var i = 0; i < 10; i++) {
+            var a = parseInt(window.activeUser.Environment[userEnvironmentKeys[i]]);
+            var b = parseInt(window.activeUser.SoftSkills[userSoftSkillKeys[i]]);
+            var c = parseInt(window.activeUser.TechSkills[userTechSkillKeys[i]]);
+            if (!isNaN(a)) currentMax += a;
+            if (!isNaN(b)) currentMax += b;
+            if (!isNaN(c)) currentMax += c;
+        }
+
+        window.document.getElementById("matches").innerHTML +=
+            "<div class='row' style='text-align: center;'><p>"+currentObject.get("cid")+" scored "+currentScore+" out of "+currentMax+"!</p></div>";
     });
 }

@@ -20,13 +20,10 @@ $(document).ready(function(){
                 data: [0,0,0,0,0,0,0,0,0,0],
                 options:{
                     legend: {
-                        display: false,
+                        display: false
                     }
                 }
             }]
-    }
-        ,
-        options: {
         }
     });
 });

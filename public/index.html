@@ -92,7 +92,7 @@
                 }, this);
             }
 
-          fetchUserDetails();
+            fetchUserDetails();
             setTimeout(function () {
                 fetchVacantPositions();
             }, 750);
@@ -157,6 +157,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#hardskills">Technical skills</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#matches">Matches</a>
+                        </li>
 
                     </ul>
                 </div>
@@ -170,22 +173,22 @@
                     <script>
                         function changeImg(){
                             if(document.getElementById("img").src==="https://i.imgur.com/syweC01.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/Ed7xq7I.png"
+                                document.getElementById("img").src = "https://i.imgur.com/Ed7xq7I.png";
 
                             }else if(document.getElementById("img").src==="https://i.imgur.com/Ed7xq7I.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/lKixWPA.png"
+                                document.getElementById("img").src = "https://i.imgur.com/lKixWPA.png";
 
                             }else if(document.getElementById("img").src==="https://i.imgur.com/lKixWPA.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/0U4WY3W.png"
+                                document.getElementById("img").src = "https://i.imgur.com/0U4WY3W.png";
 
                             }else if(document.getElementById("img").src==="https://i.imgur.com/0U4WY3W.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/2wY000O.png"
+                                document.getElementById("img").src = "https://i.imgur.com/2wY000O.png";
 
                             }else if(document.getElementById("img").src==="https://i.imgur.com/2wY000O.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/8lvDvPE.png"
+                                document.getElementById("img").src = "https://i.imgur.com/8lvDvPE.png";
 
                             }else if(document.getElementById("img").src==="https://i.imgur.com/8lvDvPE.png") {
-                                document.getElementById("img").src = "https://i.imgur.com/syweC01.png"
+                                document.getElementById("img").src = "https://i.imgur.com/syweC01.png";
                             }
                         }
                     </script>
@@ -213,15 +216,8 @@
                                 </div>
 
                             </div>
-                            <div class="col-sm-6 padded-column">
+                            <div style="padding-top: 88px;" class="col-sm-6 padded-column">
 
-
-
-                                <div class="row">
-                                    <h2 class="center">
-                                        <p1> Points remaining:<div id="points", class="potat">30</div></p1>
-                                    </h2>
-                                </div>
 
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -405,6 +401,12 @@
                                     </div>
                                 </div>
 
+                                <div class="row" style="padding-top: 24px;">
+                                    <h2 class="center">
+                                        <p1> Points remaining:<div id="points", class="potat">30</div></p1>
+                                    </h2>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -528,6 +530,10 @@
 
                         </div>
                     </div>
+
+                </div>
+
+                <div id="matches" class="extraHeight">
 
                 </div>
 
