@@ -47,6 +47,7 @@
         }
 
         function initEnv() {
+
             // Environment row initialisation:
             var db = firebase.database().ref(userEnvironmentPath);
             for (var i = 0; i < 10; i++) {
@@ -78,6 +79,11 @@
                 }, this);
             }
 
+            fetchUserDetails();
+            setTimeout(function () {
+                fetchVacantPositions();
+            }, 750);
+/*
             // get company SoftSkills
             const root = firebase.database().ref();
             var ex = root.child('position/');
@@ -103,8 +109,7 @@
             }, function(error) {
 
             }, this);
-
-
+*/
 
         }
     </script>
@@ -113,6 +118,7 @@
     <script type="text/javascript" src="./scripts/get.js"></script>
     <script type="text/javascript" src="./scripts/Objects.js"></script>
     <script type="text/javascript" src="./scripts/functions.js"></script>
+    <script type="text/javascript" src="./scripts/match.js"></script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
 

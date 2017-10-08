@@ -7,7 +7,7 @@
 
 var ids = 0;
 var lastClicked = [];
-
+/*
 function getPoints(object) {
 
     var arr = [];
@@ -120,10 +120,10 @@ function compare(object,company, user) {
     return match;
 
 }
-
+*/
 /* Start of test matching algorithim */
 
-
+/*
 // 40 points to deliver
 var Company1 = {
     communication: 3,
@@ -151,7 +151,7 @@ var User1 = {
     'Decision Making': 3,
 
 }
-
+*/
 /* end of test */
 
 var iterate = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
