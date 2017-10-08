@@ -22,7 +22,6 @@ function fetchVacantPositions() {
     root.once("value", function() {}, function (){}, this).
     then(function (value) {
             var pos_tree = value.val();
-            console.log(pos_tree);
 
             Object.keys(pos_tree).forEach(function (companyId) {
                 Object.keys(pos_tree[companyId]).forEach(function (posId) {
@@ -30,6 +29,7 @@ function fetchVacantPositions() {
                     var single_pos = new Map();
                     single_pos.set("cid", companyId);
                     single_pos.set("pos", posId);
+                    single_pos.set("title", pos_tree[companyId][posId]['Title']);
                     single_pos.set("soft", pos_tree[companyId][posId]['SoftSkills']);
                     single_pos.set("tech", pos_tree[companyId][posId]['TechSkills']);
                     score(single_pos);
@@ -40,9 +40,6 @@ function fetchVacantPositions() {
 
 function compare(keyset, myvalues, theirvalues) {
     if (myvalues == undefined || theirvalues == undefined) return 0;
-    console.log(keyset);
-    console.log(myvalues);
-    console.log(theirvalues);
     var sum = 0;
     for (var i = 0; i < keyset.length; i++) {
         var a = parseInt(myvalues[keyset[i]]);
@@ -55,11 +52,11 @@ function compare(keyset, myvalues, theirvalues) {
 
 function score(currentObject) {
     const root = firebase.database().ref("users/"+currentObject.get("cid")+"/");
-    const env  = root.child("Environment/");
-    env.once("value", function(){}, function (){}, this).
+    root.once("value", function(){}, function (){}, this).
     then(function (value) {
         var currentScore = 0;
-        currentObject.set("env", value.val());
+
+        currentObject.set("env", value.val()['Environment']);
         currentScore += compare(userEnvironmentKeys, window.activeUser.Environment, currentObject.get("env"));
         currentScore += compare(userSoftSkillKeys, window.activeUser.SoftSkills, currentObject.get("soft"));
         currentScore += compare(userTechSkillKeys, window.activeUser.TechSkills, currentObject.get("tech"));
@@ -73,8 +70,11 @@ function score(currentObject) {
             if (!isNaN(b)) currentMax += b;
             if (!isNaN(c)) currentMax += c;
         }
+        var currentPercentage = currentScore / (currentMax / 100);
 
         window.document.getElementById("matches").innerHTML +=
-            "<div class='row' style='text-align: center;'><p>"+currentObject.get("cid")+" scored "+currentScore+" out of "+currentMax+"!</p></div>";
+            "<div style='width: 800px; margin: auto 0 0 auto;'>" +
+            "<p>'"+currentObject.get("title")+"' at '"+value.val()['Name']+"' matches your profile with approx. "+currentPercentage.toFixed(2)+"% !</p>" +
+            "</div>";
     });
 }
