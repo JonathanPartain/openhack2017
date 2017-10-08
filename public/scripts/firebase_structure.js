@@ -35,7 +35,7 @@ const userSoftSkillKeys = [
     "Adaptability",
     "CriticalThinking",
     "Creativity",
-    "Decision Making"
+    "DecisionMaking"
 ];
 
 const userTechSkillPath = userPath +"TechSkills/";

@@ -33,7 +33,7 @@
           "Adaptability":       { ".validate": true },
           "CriticalThinking":   { ".validate": true },
           "Creativity":         { ".validate": true },
-          "Decision Making":    { ".validate": true },
+          "DecisionMaking":     { ".validate": true },
           "$other":             { ".validate": false },
           ".write":               "!root.child($uid).child('isCompany').exists() || root.child($uid).child('isCompany').val() === false"
         },
