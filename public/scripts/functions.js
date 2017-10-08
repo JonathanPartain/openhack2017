@@ -25,7 +25,7 @@ var hlist = [
 ];
 
 function listQuestions(type) {
-    let list = (type == 'soft' ? slist : hlist);
+    var list = (type == 'soft' ? slist : hlist);
 
     var f = document.createElement("form");
     f.setAttribute("action", "someFunction()");
