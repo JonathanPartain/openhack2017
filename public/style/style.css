@@ -107,6 +107,7 @@
 
 h1 {
     font-size: 36px;
+
 }
 p {
 	font-size: 18px;
@@ -200,4 +201,30 @@ li.point.enabled, li.point0.enabled, li.point1.enabled, li.point2.enabled, li.po
 .nav-tabs .nav-link {
 	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
+}
+
+
+
+
+/*
+ what the fuck is writing quality code
+ive never met her
+nevr known her
+*/
+
+
+
+
+
+.email{
+	font-size: 36px;
+	font-style: italic;
+	font-family: serif;
+}
+
+img{
+	height: 200px;
+	width: 200px;
+	background: #8A7292;
+	border-radius: 50%;
 }

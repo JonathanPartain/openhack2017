@@ -27,23 +27,23 @@ var hlist = [
 function listQuestions(type) {
     let list = (type == 'soft' ? slist : hlist);
 
-    let f = document.createElement("form");
+    var f = document.createElement("form");
     f.setAttribute("action", "someFunction()");
 
-    let ul = document.createElement("list");
+    var ul = document.createElement("list");
 
-    for (let n = 0; n < list.length; n++) {
+    for (var n = 0; n < list.length; n++) {
         // one answer for each question
-        let ans = document.createElement("list");
+        var ans = document.createElement("list");
         ans.setAttribute("class", "rating");
 
         // create li for the question
-        let li = document.createElement("li");
+        var li = document.createElement("li");
         li.appendChild(document.createTextNode(list[n]));
         ul.appendChild(li);
         // add li for the "stars"
-        for (let m = 0; m < 6; m++) {
-            let li2 = document.createElement("li");
+        for (var m = 0; m < 6; m++) {
+            var li2 = document.createElement("li");
             li2.innerHTML = m;
             if (m === 0) {
                 li2.setAttribute("class", "enabled point"+n);
