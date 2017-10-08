@@ -149,7 +149,7 @@
                             <a class="nav-link" href="#softskills">Soft skills</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#hardskills">Hard skills</a>
+                            <a class="nav-link" href="#hardskills">Technical skills</a>
                         </li>
 
                     </ul>
@@ -159,8 +159,32 @@
 
                 <div class="center extraHeight" id="you">
 
-                    <h2 id="email">hello</h2>
-                    <img src="https://i.imgur.com/lKixWPA.png">
+                    <img src="https://i.imgur.com/lKixWPA.png" id="img" onclick="changeImg()">
+
+                    <script>
+                        function changeImg(){
+                            if(document.getElementById("img").src==="https://i.imgur.com/syweC01.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/Ed7xq7I.png"
+
+                            }else if(document.getElementById("img").src==="https://i.imgur.com/Ed7xq7I.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/lKixWPA.png"
+
+                            }else if(document.getElementById("img").src==="https://i.imgur.com/lKixWPA.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/0U4WY3W.png"
+
+                            }else if(document.getElementById("img").src==="https://i.imgur.com/0U4WY3W.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/2wY000O.png"
+
+                            }else if(document.getElementById("img").src==="https://i.imgur.com/2wY000O.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/8lvDvPE.png"
+
+                            }else if(document.getElementById("img").src==="https://i.imgur.com/8lvDvPE.png") {
+                                document.getElementById("img").src = "https://i.imgur.com/syweC01.png"
+                            }
+                        }
+                    </script>
+
+                    <div class="email" id="email">"< email >"</div>
                 </div>
 
 

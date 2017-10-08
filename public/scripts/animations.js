@@ -130,3 +130,14 @@ $(document).ready(function(){
     }
 
 });
+
+var nr= 0;
+var photos = ["https://i.imgur.com/syweC01.png",
+              "https://i.imgur.com/Ed7xq7I.png",
+              "https://i.imgur.com/lKixWPA.png",
+              "https://i.imgur.com/0U4WY3W.png",
+              "https://i.imgur.com/2wY000O.png",
+              "https://i.imgur.com/8lvDvPE.png"];
+
+
+
